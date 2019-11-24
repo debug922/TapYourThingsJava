@@ -17,15 +17,18 @@ public class Adding extends AppCompatActivity {
     }
     public void save (View view) {
         final EditText editText = findViewById(R.id.name);
+        final EditText editTextCount=findViewById(R.id.count);
+        String countOp=editTextCount.getText().toString();
+
         String insert = editText.getText().toString();
         if (insert.isEmpty() || insert.trim().length() == 0){
             editText.setError("is empty");
             Toast.makeText(Adding.this, "is empty" , Toast.LENGTH_LONG).show();
         }
         else {
-            if (unique(insert)) {
-                String count = String.valueOf(Tap.count(Tap.class));
-                Toast.makeText(Adding.this, count, Toast.LENGTH_LONG).show();
+            if (unique(insert,countOp)) {
+                String totalRow = String.valueOf(Tap.count(Tap.class));
+                Toast.makeText(Adding.this, totalRow, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(Adding.this, MainActivity.class);
                 startActivity(intent);
             }
@@ -37,10 +40,10 @@ public class Adding extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private boolean unique(String thing){
+    private boolean unique(String thing, String count){
         if(Tap.find(Tap.class,"thing= ?",thing).isEmpty()){
             Tap tap=new Tap();
-            tap.setTap(0);
+            tap.setTap(getCount(count));
             tap.setThing(thing);
             tap.save();
             return true;
@@ -49,6 +52,17 @@ public class Adding extends AppCompatActivity {
         return false;
     }
 
+    private  int getCount(String count){
+        if( count==null ||count.isEmpty())
+            return 0;
+        try {
+
+            return Integer.valueOf(count);
+
+        }catch (Exception e){
+            return 0;
+        }
+    }
 
 }
 

@@ -19,6 +19,14 @@
             android:inputType="textPersonName"
             android:autofillHints="insert name" />
 
+        <EditText
+            android:id="@+id/count"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:autofillHints="count optional default=0" />
+
         <Button
             android:id="@+id/Ok"
             android:layout_width="match_parent"
