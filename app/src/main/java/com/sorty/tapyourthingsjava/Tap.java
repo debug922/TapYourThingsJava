@@ -3,7 +3,9 @@ package com.sorty.tapyourthingsjava;
 import com.orm.SugarRecord;
 import com.orm.dsl.Unique;
 
-public class Tap extends SugarRecord {
+import java.io.Serializable;
+
+public class Tap extends SugarRecord implements Serializable {
 
     private int tap;
     @Unique
