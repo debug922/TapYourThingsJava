@@ -1,4 +1,4 @@
 # TapYourThingsJava
 
-# new features to develop:
+## new features to develop:
 - bug press button
