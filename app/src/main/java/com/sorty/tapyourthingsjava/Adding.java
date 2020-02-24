@@ -17,7 +17,7 @@ public class Adding extends AppCompatActivity {
     }
     public void save (View view) {
         final EditText editText = findViewById(R.id.name);
-        final EditText editTextCount=findViewById(R.id.count);
+        final EditText editTextCount=findViewById(R.id.counterAdd);
         String countOp=editTextCount.getText().toString();
 
         String insert = editText.getText().toString();

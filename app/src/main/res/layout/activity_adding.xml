@@ -18,13 +18,13 @@
             android:labelFor="@id/name"/>
 
         <EditText
-            android:id="@+id/count"
+            android:id="@+id/counterAdd"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
             android:inputType="numberSigned"
             android:autofillHints="count optional default=0"
-            android:labelFor="@id/count"/>
+            android:labelFor="@id/counterAdd"/>
 
         <Button
             android:id="@+id/Ok"

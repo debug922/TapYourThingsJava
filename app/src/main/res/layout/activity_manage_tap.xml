@@ -39,7 +39,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.757"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/thingEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/thingEditText"
+        android:layout_marginRight="72dp" />
 
     <EditText
         android:id="@+id/countEditText"

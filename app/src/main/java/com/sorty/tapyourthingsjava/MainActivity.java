@@ -1,9 +1,11 @@
 package com.sorty.tapyourthingsjava;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -18,6 +20,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private ConstraintLayout constraintLayout;
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     private void print(List<Tap> list){
         final LinearLayout myLayout=findViewById(R.id.layout);
 
@@ -74,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-
+//da fare tasto back uscire dall app
     private class ButtonTap implements View.OnClickListener{
 
         @Override
@@ -105,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
 
